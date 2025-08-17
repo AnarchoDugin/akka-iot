@@ -1,0 +1,247 @@
+:root {
+    --primary: #0f0f1a;
+    --secondary: #1e1e2e;
+    --accent: #00f0ff;
+    --text: #ffffff;
+    --text-secondary: #a0a0c0;
+    --card-bg: rgba(30, 30, 46, 0.7);
+    --success: #00ff88;
+    --warning: #ffaa00;
+    --error: #ff3860;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--primary);
+    color: var(--text);
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--accent), #0066ff);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn {
+    background: rgba(255, 56, 96, 0.1);
+    color: var(--error);
+    border: 1px solid var(--error);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 56, 96, 0.2);
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 20%;
+    background: var(--error);
+}
+
+.status-indicator.connected {
+    background: var(--success);
+    box-shadow: 0 0 10px var(--success);
+}
+
+.auth-form {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 10px auto;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.auth-form h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--accent);
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.form-control {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(10, 10, 20, 0.6);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 16px;
+    transition: all 2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2);
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--accent), #0066ff);
+    color: var(--primary);
+    border: none;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.devices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.device-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.device-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 240, 255, 0.2);
+    border-color: var(--accent);
+}
+
+.device-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.device-status {
+    font-size: 14px;
+    color: var(--text-secondary);
+    background: rgba(0, 240, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.device-name {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0;
+}
+
+.device-data {
+    display: grid;
+    grid-template-columns: 0.6fr 0.6fr 1fr;
+    gap: 15px;
+}
+
+.data-item {
+    background: rgba(10, 10, 20, 0.4);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.data-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.data-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.temp-value {
+    color: var(--accent);
+}
+
+.humidity-value {
+    color: var(--accent);
+}
+
+.uptime-value {
+    color: var(--success);
+}
+
+.hidden {
+    display: none;
+}
